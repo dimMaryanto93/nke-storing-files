@@ -1,0 +1,15 @@
+version: '3.9'
+services:
+  apps:
+    image: dimmaryanto93/com.maryanto.dimas.example-springboot3-logging-file:v1
+    build:
+      dockerfile: Dockerfile
+      context: ./
+      args:
+        - JAR_FILE=springboot3-logging-file.jar
+    ports:
+      - "8080:8080"
+    volumes:
+      - log_data:/var/logs/springboot-app
+volumes:
+  log_data: {}
