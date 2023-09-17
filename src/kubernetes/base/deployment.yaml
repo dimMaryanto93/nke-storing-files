@@ -28,6 +28,37 @@ spec:
       volumes:
         - name: logging-path
           persistentVolumeClaim:
-            claimName: springboot-log-storage
+            claimName: pvc-springboot3-logging
             readOnly: false
       restartPolicy: Always
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx
+  labels:
+    app: nginx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      name: nginx
+      labels:
+        app: nginx
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:mainline
+          imagePullPolicy: IfNotPresent
+          volumeMounts:
+            - mountPath: /var/logs/springboot-app
+              name: logging-path
+      restartPolicy: Always
+      volumes:
+        - name: logging-path
+          persistentVolumeClaim:
+            claimName: pvc-springboot3-logging
+            readOnly: true

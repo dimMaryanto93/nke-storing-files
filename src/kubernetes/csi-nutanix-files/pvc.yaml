@@ -1,8 +1,9 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: springboot-log-storage
+  name: pvc-springboot3-logging
 spec:
+  storageClassName: nutanix-files-sc
   accessModes:
     - ReadWriteOnce
   resources:
