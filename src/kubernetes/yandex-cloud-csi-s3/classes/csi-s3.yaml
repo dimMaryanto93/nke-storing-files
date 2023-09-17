@@ -99,19 +99,19 @@ spec:
       volumes:
         - name: registration-dir
           hostPath:
-            path: /var/lib/kubelet/plugins_registry/
+            path: /var/nutanix/var/lib/kubelet/plugins_registry/
             type: DirectoryOrCreate
         - name: plugin-dir
           hostPath:
-            path: /var/lib/kubelet/plugins/ru.yandex.s3.csi
+            path: /var/nutanix/var/lib/kubelet/plugins/ru.yandex.s3.csi
             type: DirectoryOrCreate
         - name: stage-dir
           hostPath:
-            path: /var/lib/kubelet/plugins/kubernetes.io/csi
+            path: /var/nutanix/var/lib/kubelet/plugins/kubernetes.io/csi
             type: DirectoryOrCreate
         - name: pods-mount-dir
           hostPath:
-            path: /var/lib/kubelet/pods
+            path: /var/nutanix/var/lib/kubelet/pods
             type: Directory
         - name: fuse-device
           hostPath:
