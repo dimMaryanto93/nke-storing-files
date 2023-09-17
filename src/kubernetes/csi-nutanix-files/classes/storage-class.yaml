@@ -16,6 +16,7 @@ parameters:
   csi.storage.k8s.io/provisioner-secret-name: ntnx-files-secret
   csi.storage.k8s.io/provisioner-secret-namespace: ntnx-system
   storageType: NutanixFiles
-  squashType: all-squash
+mountOptions:
+  - hard
 allowVolumeExpansion: true
 reclaimPolicy: Retain

@@ -18,6 +18,10 @@ spec:
         app: springboot3-logging
         env: testing
     spec:
+      hostAliases:
+        - hostnames:
+            - logging-apps.logging.bank-muamalat.com
+          ip: 10.55.22.48
       containers:
         - name: springboot3-logging
           image: dimmaryanto93/com.maryanto.dimas.example-springboot3-logging-file:v1
@@ -49,6 +53,10 @@ spec:
       labels:
         app: nginx
     spec:
+      hostAliases:
+        - hostnames:
+            - logging-apps.logging.bank-muamalat.com
+          ip: 10.55.22.48
       containers:
         - name: nginx
           image: nginx:mainline
