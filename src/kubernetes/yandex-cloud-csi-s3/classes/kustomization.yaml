@@ -3,3 +3,7 @@ kind: Kustomization
 
 resources:
   - bucket-secret.yaml
+  - provisioner.yaml
+  - driver.yaml
+  - csi-s3.yaml
+  - storage-class.yaml
