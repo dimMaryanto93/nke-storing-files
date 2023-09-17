@@ -1,7 +1,7 @@
 kind: StorageClass
 apiVersion: storage.k8s.io/v1
 metadata:
-  name: kube-system
+  name: nutanix-s3-sc
 provisioner: ru.yandex.s3.csi
 parameters:
   mounter: geesefs
@@ -10,10 +10,10 @@ parameters:
   # to use an existing bucket, specify it here:
   bucket: bank-muamalat
   csi.storage.k8s.io/provisioner-secret-name: ntnx-s3-secret
-  csi.storage.k8s.io/provisioner-secret-namespace: csi-s3
+  csi.storage.k8s.io/provisioner-secret-namespace: ntnx-s3
   csi.storage.k8s.io/controller-publish-secret-name: ntnx-s3-secret
-  csi.storage.k8s.io/controller-publish-secret-namespace: csi-s3
+  csi.storage.k8s.io/controller-publish-secret-namespace: ntnx-s3
   csi.storage.k8s.io/node-stage-secret-name: ntnx-s3-secret
-  csi.storage.k8s.io/node-stage-secret-namespace: csi-s3
+  csi.storage.k8s.io/node-stage-secret-namespace: ntnx-s3
   csi.storage.k8s.io/node-publish-secret-name: ntnx-s3-secret
-  csi.storage.k8s.io/node-publish-secret-namespace: csi-s3
+  csi.storage.k8s.io/node-publish-secret-namespace: ntnx-s3

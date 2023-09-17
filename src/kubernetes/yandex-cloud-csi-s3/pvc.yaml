@@ -3,7 +3,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: pvc-springboot3-logging
 spec:
-  storageClassName: csi-s3
+  storageClassName: nutanix-s3-sc
   accessModes:
     - ReadWriteOnce
   resources:
