@@ -7,14 +7,14 @@ metadata:
 provisioner: csi.nutanix.com
 parameters:
   nfsPath: logging-apps
+  nfsServerName: logging-apps
   csi.storage.k8s.io/node-publish-secret-name: ntnx-files-secret
   csi.storage.k8s.io/node-publish-secret-namespace: ntnx-system
   csi.storage.k8s.io/controller-expand-secret-name: ntnx-files-secret
   csi.storage.k8s.io/controller-expand-secret-namespace: ntnx-system
-  dynamicProv: ENABLED
-  nfsServerName: logging-apps
   csi.storage.k8s.io/provisioner-secret-name: ntnx-files-secret
   csi.storage.k8s.io/provisioner-secret-namespace: ntnx-system
+  dynamicProv: ENABLED
   storageType: NutanixFiles
 mountOptions:
   - hard
