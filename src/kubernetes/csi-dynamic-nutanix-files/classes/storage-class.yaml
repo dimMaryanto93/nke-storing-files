@@ -1,12 +1,12 @@
 kind: StorageClass
 apiVersion: storage.k8s.io/v1
 metadata:
-  name: nutanix-files-sc
+  name: nutanix-files-dynamic-sc
   annotations:
     storageclass.kubernetes.io/is-default-class: "false"
 provisioner: csi.nutanix.com
 parameters:
-  nfsPath: nke-files-share
+  nfsPath: nke-files-dynamic-share
   nfsServerName: files-nke
   nfsServer: 10.38.187.48
   csi.storage.k8s.io/node-publish-secret-name: ntnx-files-secret
@@ -17,6 +17,7 @@ parameters:
   csi.storage.k8s.io/provisioner-secret-namespace: ntnx-system
   storageType: NutanixFiles
   squashType: root-squash
+  dynamicProv: ENABLED
 mountOptions:
   - hard
   - vers=4
