@@ -18,5 +18,6 @@ parameters:
   storageType: NutanixFiles
 mountOptions:
   - hard
+  - nfsvers=4.1
 allowVolumeExpansion: true
 reclaimPolicy: Retain

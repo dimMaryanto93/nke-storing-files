@@ -14,5 +14,5 @@ spec:
     - hard
     - nfsvers=4.1
   nfs:
-    path: /logging-apps/spring1-app
+    path: /logging
     server: 10.55.22.48
